@@ -1,44 +1,36 @@
 'use strict';
+let EHTController = require("../../eth_connector/Controller.js");
+
+
+
+
 
 
 /**
- *
- * owner_get_params Owner_get_params 
- * returns owner_get_params_response
- **/
+* @function
+* @instance
+* @param { owner_get_params } owner_get_params
+* returns { Promise }
+**/
 exports.get_owner = function(owner_get_params) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "address" : { }
+    return new EHTController().get_owner(
+        owner_get_params.from,
+         owner_get_params["address"],
+    );
 };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
-
 
 /**
- *
- * owner_post_params Owner_post_params 
- * returns owner_post_params_response
- **/
+* @function
+* @instance
+* @param { owner_post_params } owner_post_params
+* returns { Promise }
+**/
 exports.post_owner = function(owner_post_params) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "receipt" : {
-    "hash" : "hash"
-  }
+    return new EHTController().post_owner(
+        owner_post_params.from, 
+         owner_post_params["address"],
+    );
 };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
+
+
 

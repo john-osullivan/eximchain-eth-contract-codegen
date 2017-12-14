@@ -1,44 +1,36 @@
 'use strict';
+let EHTController = require("../../eth_connector/Controller.js");
+
+
+
+
+
+
 
 
 /**
- *
- * userAddr_get_params UserAddr_get_params 
- * returns userAddr_get_params_response
- **/
+* @function
+* @instance
+* @param { userAddr_get_params } userAddr_get_params
+* returns { Promise }
+**/
 exports.get_userAddr = function(userAddr_get_params) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "bool" : true
+    return new EHTController().get_userAddr(
+        userAddr_get_params.from,
+         userAddr_get_params["bool"],
+    );
 };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
-
 
 /**
- *
- * userAddr_post_params UserAddr_post_params 
- * returns userAddr_post_params_response
- **/
+* @function
+* @instance
+* @param { userAddr_post_params } userAddr_post_params
+* returns { Promise }
+**/
 exports.post_userAddr = function(userAddr_post_params) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "receipt" : {
-    "hash" : "hash"
-  }
+    return new EHTController().post_userAddr(
+        userAddr_post_params.from, 
+         userAddr_post_params["address"],
+    );
 };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
 

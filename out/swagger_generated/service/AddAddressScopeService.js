@@ -1,24 +1,24 @@
 'use strict';
+let EHTController = require("../../eth_connector/Controller.js");
+
 
 
 /**
- *
- * addAddress_post_params AddAddress_post_params 
- * returns addAddress_post_params_response
- **/
+* @function
+* @instance
+* @param { addAddress_post_params } addAddress_post_params
+* returns { Promise }
+**/
 exports.post_addAddress = function(addAddress_post_params) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "receipt" : {
-    "hash" : "hash"
-  }
+    return new EHTController().post_addAddress(
+        addAddress_post_params.from, 
+         addAddress_post_params["user"],
+    );
 };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
+
+
+
+
+
+
 

@@ -41,3 +41,6 @@ copy the above generated swagger config file and download nodejs-server stub's a
 
 then run to override the swagger service stub files
 ```node SwaggerServiceGenerator.js <path_to_config_file> <relative_path from output_folder to path_to_connector_output_folder> <swagger_output>/service```
+
+
+Note: refer to same output generated in `out` folder
