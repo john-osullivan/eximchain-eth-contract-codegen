@@ -3,7 +3,7 @@
   "schemes": ["https"],
   "host": "localhost:8080",
   "basePath": "/",
-  "contract": "../../whiteListContracts/build/contracts/Whitelist.json",
+  "contract": "/home/my_smart_contract/build/contracts/Whitelist.json",
   "tags": [
     {
       "name": "admins",
@@ -11,7 +11,7 @@
     }
   ],
   "api": {
-    "whitelistAddress": {
+    "methodName": {
       "post": {
         "tags": [ "admins" ]
       }
