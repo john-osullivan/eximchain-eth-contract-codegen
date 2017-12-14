@@ -32,12 +32,12 @@ sample configuration...
 ```
 
 run to generate swagger config
-`node OpenAPIGenerator.js <path_to_config_file> <path_to_output_file>`
+```node OpenAPIGenerator.js <path_to_config_file> <path_to_output_file>```
 
 run to generate connector files which interact with smart contract
-`node ETHConnectorGenerator.js <path_to_config_file> <path_to_connector_output_folder>`
+```node ETHConnectorGenerator.js <path_to_config_file> <path_to_connector_output_folder>```
 
 copy the above generated swagger config file and download nodejs-server stub's and extract it to desired folder, say <swagger_output>
 
 then run to override the swagger service stub files
-`node SwaggerServiceGenerator.js <path_to_config_file> <relative_path from output_folder to path_to_connector_output_folder> <swagger_output>/service`
+```node SwaggerServiceGenerator.js <path_to_config_file> <relative_path from output_folder to path_to_connector_output_folder> <swagger_output>/service```
