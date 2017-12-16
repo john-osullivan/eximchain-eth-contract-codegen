@@ -4,7 +4,7 @@
   "description": "Generates Server and client code based on given configuration file, contract build file(which contains abi) and output path",
   "main": "N/A",
   "scripts": {
-    "test": "mocha whiteListBot/tests/**.spec.js"
+    "test": "mocha ./tests/**.spec.js"
   },
   "repository": {
     "type": "git",
