@@ -32,9 +32,11 @@ class SwaggerServiceGenerator {
     /**
      * @function
      * @instance
+     * @param {String} relative_path_to_eth_connector -
+     *                  relative path to eth connector from output folder to folder in which Connector.js is present
      * @description process generation by processing openAPI generation
      * */
-    process(path_to_eth_connector) {
+    process(relative_path_to_eth_connector) {
         this.openAPIGenerator.process();
 
         let controller_template = String(fs.readFileSync("./SwaggerService_template.hbs"));
@@ -62,7 +64,7 @@ class SwaggerServiceGenerator {
                 return `${method.method}_${method.path.path}`;
             });
             this.service_files_code[tag.name] = Handlebars.compile(controller_template)({
-                path_to_eth_connector: path_to_eth_connector,
+                path_to_eth_connector: relative_path_to_eth_connector,
                 methods: abi,
                 allowed_methods: allowed_methods
             });
@@ -89,7 +91,11 @@ class SwaggerServiceGenerator {
 
 }
 
-let parser = new SwaggerServiceGenerator(process.argv[2]);
-parser.init();
-parser.process(process.argv[3]);
-parser.build(process.argv[4]);
+if (require.main === module) {
+    let parser = new SwaggerServiceGenerator(process.argv[2]);
+    parser.init();
+    parser.process(process.argv[3]);
+    parser.build(process.argv[4]);
+}else{
+    module.exports = SwaggerServiceGenerator;
+}

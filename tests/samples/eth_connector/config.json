@@ -5,7 +5,7 @@
     ],
     "host": "localhost:8080",
     "basePath": "/",
-    "contract": "../../whiteListContracts/build/contracts/Whitelist.json",
+    "contract": "./tests/samples/test_contract.json",
     "tags": [
         {
             "name": "admins",
@@ -13,7 +13,7 @@
         }
     ],
     "api": {
-        "whitelistAddress": {
+        "methodName": {
             "post": {
                 "tags": [
                     "admins"

@@ -71,7 +71,11 @@ class ETHConnectorGenerator {
 
 }
 
-let eth_connector_generator = new ETHConnectorGenerator(process.argv[2]);
-eth_connector_generator.init();
-eth_connector_generator.process();
-eth_connector_generator.build(process.argv[3]);
+if (require.main === module) {
+    let eth_connector_generator = new ETHConnectorGenerator(process.argv[2]);
+    eth_connector_generator.init();
+    eth_connector_generator.process();
+    eth_connector_generator.build(process.argv[3]);
+} else {
+    module.exports = ETHConnectorGenerator;
+}
