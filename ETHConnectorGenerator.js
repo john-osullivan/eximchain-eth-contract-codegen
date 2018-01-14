@@ -22,15 +22,6 @@ class ETHConnectorGenerator {
     /**
      * @function
      * @instance
-     * @description Creates license, info objects and also openAPI instance
-     * */
-    init() {
-        //TODO stub
-    }
-
-    /**
-     * @function
-     * @instance
      * @description handle's reading the data loaded from file and creating objects
      * */
     process() {
@@ -73,7 +64,6 @@ class ETHConnectorGenerator {
 
 if (require.main === module) {
     let eth_connector_generator = new ETHConnectorGenerator(process.argv[2]);
-    eth_connector_generator.init();
     eth_connector_generator.process();
     eth_connector_generator.build(process.argv[3]);
 } else {
