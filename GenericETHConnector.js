@@ -42,6 +42,7 @@ class Connector{
 
     /**
      * @function
+     * @private
      * @param {Error} err
      * @param {String} method_name
      * @description
